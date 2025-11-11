@@ -1,760 +1,617 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<title>Bhargav Chaturvedi Portfolio</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Bhargav Nandan Chaturvedi — Portfolio</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+		rel="stylesheet">
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<link rel="stylesheet" href="css/aos.css">
-
-	<link rel="stylesheet" href="css/ionicons.min.css">
-
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
-
+	<!-- Font Awesome for icons -->
 	<script src="https://kit.fontawesome.com/775c0f36d7.js" crossorigin="anonymous"></script>
 
 	<style>
-		/*======================================
-//--//-->   ABOUT
-======================================*/
-		/* for freelancer-icon */
-		.freelancer-icon .icon-image {
-			width: 37px;
-			height: 37px;
-			margin-left: 15%;
-			margin-top: 12%;
-			filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(600%) hue-rotate(360deg) brightness(100%);
-			transition: filter 0.3s ease;
-			/* Smooth transition for hover effect */
-		}
+		:root {
+  --bg-1: #0d0f11;
+  --bg-2: #121416;
+  --accent: #ffbd39;
+  --muted: #9aa0a6;
+  --card: rgba(255, 255, 255, 0.05);
+  --radius: 12px;
+  --max-width: 1100px;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
 
-		/* Change the icon color to white on hover */
-		.freelancer-icon:hover .icon-image {
-			filter: brightness(0) invert(1);
-			/* Changes color to white */
-		}
+/* ====== RESET ====== */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html, body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, var(--bg-1), var(--bg-2));
+  color: #e9eef2;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
 
+/* ====== NAVBAR ====== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 15, 15, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+.btn-ghost:hover {
+  background: var(--accent);
+  color: #111;
+  border-color: var(--accent);
+}
 
-		/* for fiverr logo  */
-		.logo-image {
-			width: 37px;
-			/* Match the width of the Freelancer logo */
-			height: auto;
-			/* Maintain aspect ratio */
-			margin-left: 15%;
-			/* Align with Freelancer logo's positioning */
-			margin-top: 12%;
-			/* filter: sepia(2) saturate(10000%) hue-rotate(66deg) brightness(2.4); */
-			transition: filter 0.3s ease;
-			/* Smooth transition for hover effect */
-		}
+/* ====== GLOBAL LAYOUT ====== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 120px 32px 40px; /* top padding accounts for fixed navbar */
+}
 
-		/* Optional: Add hover effect similar to Freelancer logo */
-		.logo-image:hover {
-			filter: brightness(0) invert(1);
-			/* Changes color to white on hover */
-		}
+/* ====== HERO ====== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 0;
+  animation: fadeInUp 0.9s ease both;
+}
+.hero-left h1 {
+  font-size: 38px;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+.hero-left .name {
+  color: #fff;
+}
+.lead {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.typing {
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+  min-height: 30px;
+  min-width: 320px;
+  white-space: nowrap;
+}
+.cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), #f6b23a);
+  color: #111;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 18px rgba(255, 189, 57, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 189, 57, 0.2);
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  color: #fff;
+  border-color: var(--accent);
+}
 
-		.about-mf .box-shadow-full {
-			padding-top: 4rem;
-			padding-bottom: 4rem;
-		}
+/* ====== PROFILE CARD ====== */
+.profile-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeInUp 1s ease both;
+}
+.profile-card .img-wrap {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+.profile-card h3 {
+  margin: 10px 0 6px;
+}
+.profile-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-		.about-mf .about-img {
-			margin-bottom: 2rem;
-		}
+/* ====== SECTION BASE ====== */
+.section {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015) 0%, rgba(255,255,255,0.03) 100%);
+  z-index: -1;
+  border-radius: 14px;
+}
+.section .heading {
+  margin-bottom: 24px;
+}
+.section .heading h2 {
+  font-size: 26px;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+.section .heading h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
 
-		.about-mf .about-img img {
-			margin-left: 10px;
-		}
+/* ====== CARDS ====== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  animation: fadeInUp 0.8s ease both;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
 
+/* ====== PROJECTS ====== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.project .thumb {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.project h3 a {
+  color: #fff;
+}
+.project p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-		.skill-mf .progress {
-			/* background-color: #cde1f8; */
-			margin: .5rem 0 1.2rem 0;
-			border-radius: 0;
-			height: .7rem;
-		}
+/* ====== CONTACT ====== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.contact-card {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(255, 189, 57, 0.12);
+}
+.contact-card i {
+  color: var(--accent);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.contact-card {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
 
-		.skill-mf .progress .progress-bar {
-			height: .7rem;
-			background-color: #ffbd39;
-		}
+.contact-card .muted {
+  display: block;
+  word-break: break-all;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
 
+/* ====== FOOTER ====== */
+footer {
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
 
-		/* Animation styles */
-		#typing-animation {
-			position: relative;
-			font-size: 30px;
-			font-weight: bold;
-			color: rgb(255, 255, 255);
-			overflow: hidden;
-			white-space: nowrap;
-			animation: typing 3s steps(20, end) infinite;
-		}
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-		#typing-animation:before {
-			content: "";
-			/* position: absolute; */
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			background-color: #ccc;
-			animation: typing-cursor 0.5s ease-in-out infinite;
-		}
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1000px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .profile-card { order: -1; margin-bottom: 20px; }
+}
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .container { padding: 100px 24px 30px; }
+}
 
-		@keyframes typing {
-			from {
-				width: 0;
-			}
-
-			to {
-				width: 100%;
-			}
-		}
-
-		@keyframes typing-cursor {
-			from {
-				width: 5px;
-			}
-
-			to {
-				width: 0;
-			}
-		}
-
-
-		/* project image zoom effect */
-
-		.zoom-effect {
-			overflow: hidden;
-			transition: transform 0.3s ease-out;
-		}
-
-		.zoom-effect:hover {
-			transform: scale(1.1);
-		}
 	</style>
-
-
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body>
 
-
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">Bhargav Nandan Chaturvedi</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
+	<div class="container">
+		<!-- NAVBAR -->
+		<header class="nav">
+			<div class="brand">Bhargav N. Chaturvedi</div>
+			<nav class="nav-links" aria-label="Primary">
+				<a href="#home-section">Home</a>
+				<a href="#about-section">About</a>
+				<a href="#resume-section">Resume</a>
+				<a href="#project-section">Projects</a>
+				<a href="#contact-section">Contact</a>
+			</nav>
+			<div style="display:flex;gap:12px;align-items:center">
+				<a class="btn-ghost" href="https://github.com/Bhargav-Chaturvedi" target="_blank"
+					rel="noopener">GitHub</a>
+				<a class="btn-ghost"
+					href="https://drive.google.com/file/d/1ArVKJWgL4wgSQFcqFCvahhKpmmuNDK2e/view?usp=sharing"
+					target="_blank" rel="noopener">Resume</a>
 			</div>
-		</div>
-	</nav>
-	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image: url(images/bg_1.png); background-position: 40px; background-size: 70%;">
-							<div class="overlay"></div>
-						</div>
+		</header>
 
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Hello!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Bhargav Nandan Chaturvedi</span></h1>
+		<!-- HERO -->
+		<section id="home-section" class="hero">
+			<div class="hero-left">
+				<span class="big-label">Hi</span>
+				<h1>I'm <span class="name">Bhargav Nandan Chaturvedi</span></h1>
+				<div class="lead">Blockchain developer & Solidity smart contract engineer. I build secure, gas-optimized
+					dApps and developer-friendly integrations for web3 products.</div>
 
-								<!-- Element to contain animated typing -->
-								<span id="typing-animation"></span>
+				<div class="typing" id="typing"></div>
 
-								<script>
-
-									// Initialize the typing animation
-									const typingAnimationElement = document.getElementById('typing-animation');
-
-									// Create an array of typing text
-									const typingTexts = [
-										'Smart Contract Developer',
-										'Dapp Developer',
-										'WEB3 Expert',
-										'Solidity Expert'
-									];
-
-									// Create a function to display the typing animation for a given text
-									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
-										for (let i = 0; i < text.length; i++) {
-											setTimeout(() => {
-												typingAnimationElement.textContent += text[i];
-											}, i * 100); // Increase the delay to slow down the typing animation
-										}
-
-										// Once the animation is complete, reset the text and start over
-										setTimeout(() => {
-											typingAnimationElement.textContent = '';
-											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-										}, text.length * 200);
-									}
-
-									// Start the typing animation loop
-									playTypingAnimation(typingTexts[0]);
-
-								</script>
-
-								<br>
-								<!-- <h2>A Blockchain Developer</h2> -->
-								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-								<!-- <br> -->
-								<p><a href="https://twitter.com/BhargavNandanC2" class="btn btn-primary py-3 px-4">X</a>
-									<a href="https://github.com/Bhargav-Chaturvedi"
-										class="btn btn-white btn-outline-white py-3 px-4">Github</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-					<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-										<div class="about-img">
-											<img src="images/bg_1.png" class="img-fluid rounded b-shadow-a" alt="">
-										</div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-										<div class="about-info">
-											<p><span class="title-s">Name: </span> <span>Bhargav Chaturvedi</span></p>
-											<p><span class="title-s">Job Role: </span> <span>Blockchain Developer</span>
-											</p>
-											<p><span class="title-s">Experience: </span> <span>Fresher</span></p>
-											<p><span class="title-s">Address: </span> <span>Faridabad, Haryana,
-													India</span></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>Blockchain Development</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>Web Development</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>NFT Generation</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>WEB3</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<span>Writing Smart Contract</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%"
-											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-
-								<p>Blockchain Developer | Smart Contract Expert | Web3 & DApp Enthusiast <br>
-
-									Hey there! I'm Bhargav, a passionate blockchain developer specializing in Solidity,
-									smart contract development, and decentralized applications. I have hands-on
-									experience integrating Web3 with frontend frameworks like React/Next.js, ensuring
-									seamless blockchain interactions. With a strong grasp of Node.js, Express.js, and
-									Ethereum-based solutions, I focus on building secure, efficient, and scalable
-									blockchain applications.</p>
-
-
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Blockchain &amp;
-											Cryptocurrency</span></li>
-									<li class="d-flex"><span>Domain:</span> <span> Freelance, Ecommerce Sites &amp; NFT
-											Marketplace</span></li>
-									<!-- <li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering</span></li> -->
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
-									<!-- <li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI, Looker &amp; Tableau</span></li> -->
-									<li class="d-flex"><span>Skills:</span> <span>Solidity,web3.js,
-											Ether.js,NFT , Truffle, Hardhat &amp; Dapp development</span></li>
-									<li class="d-flex"><span>Interest:</span> <span> Movies,Songs,Books</span></li>
-
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="10">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://github.com/Bhargav-Chaturvedi"
-										class="btn btn-primary py-3 px-3">Github</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-	<section class="ftco-section ftco-no-pb" id="resume-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-10 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Resume</h1>
-					<h2 class="mb-4">Resume</h2>
-					<p>Blockchain Developer with expertise in Solidity, smart contracts, and Web3 integration.
-						Passionate about building decentralized applications (DApps) and working with Ethereum-based
-						technologies. Skilled in Solidity, Web3.js, Node.js, and React/Next.js, with experience in
-						integrating smart contracts with frontend applications. I enjoy crafting secure and efficient
-						blockchain solutions, optimizing gas costs, and exploring innovations in the decentralized
-						ecosystem.</p>
-
-				</div>
-			</div>
-			<!-- 
-		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2021-Present</span>
-						<h2>Senior Data Analyst</h2>
-						<span class="position">Merkle</span>
-						<p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International. 
-							<ul>
-								<li>Analysed ad campaigns, clickstream, and customer surveys data, identified an increasing demand and launched a strategic product line.</li>
-								<li>Developed time series forecasting models to predict sales and optimize marketing budgets, got model performance of 92%.</li>
-								<li>Designed and executed A/B tests, performed rigorous statistical analysis. Led to 20% MoM increase in the conversion rate.</li>
-							</ul>
-						</p>
-					</div>
-
+				<div class="cta">
+					<a class="btn-primary" href="https://github.com/Bhargav-Chaturvedi" target="_blank">View GitHub</a>
+					<a class="btn-outline" href="#contact-section">Contact Me</a>
 				</div>
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2018-2021</span>
-						<h2>Senior Data Analyst</h2>
-						<span class="position">iQuanti</span>
-						<p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands. 
-							<ul>
-								<li>Performed in-depth market research and analysis to create online pages. Resulted in ~100% website growth and 30% increase in conversion rate YoY.</li>
-								<li>Delivered multiple training and mentorship sessions on analytical tools like SQL, MS Excel, Power BI, Tableau and Python.</li>
-								<li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
+				<div style="margin-top:20px;color:var(--muted);font-size:14px">Quick highlights: Smart Contracts • dApps
+					• Gas optimization • Web3 integrations</div>
 			</div>
 
-		<br> -->
-			<br>
+			<aside class="profile-card">
+				<div class="img-wrap">
+					<img src="images/bg_1.png" alt="profile" style="width:100%;height:100%;object-fit:cover">
+				</div>
+				<h3>Bhargav Chaturvedi</h3>
+				<p class="muted">Blockchain Developer — Solidity & dApp Specialist</p>
+				<div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
+					<a class="btn-outline" href="https://twitter.com/BhargavNandanC2" target="_blank">X</a>
+					<a class="btn-outline" href="https://www.upwork.com/freelancers/~01dfa33308f65fe086"
+						target="_blank">Upwork</a>
+					<a class="btn-outline" href="https://www.fiverr.com/bhargav_1111?up_rollout=true"
+						target="_blank">Fiverr</a>
+				</div>
+			</aside>
+		</section>
 
-			<div class="row">
-				<h1 class="big-4">Education</h1>
-				<div class="underline"></div>
+		<!-- ABOUT -->
+		<section id="about-section" class="section">
+			<div class="heading">
+				<h2>About Me</h2>
 			</div>
-			<br>
+			<div class="about-grid">
+				<div class="about-card card">
+					<p class="about-info">Blockchain Developer | Smart Contract Expert | Web3 Enthusiast. I design and
+						implement Solidity contracts, build user-friendly frontends with React and integrate smart
+						contracts using Ethers.js/Wagmi. I focus on secure patterns, gas reduction, and clear developer
+						experience.</p>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2021-still</span>
-						<h2>Bachelor of Engineering</h2>
-						<span class="position">Lingayas Vidyapeeth University</span>
-						<!-- <p class="mt-4">Grade: First class distinction.</p> -->
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2018-2019</span>
-						<h2>Higher Secondary School</h2>
-						<span class="position">B.P. Se. Sec. School</span>
-						<p class="mt-4">Grade: First class distinction.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row justify-content-center mt-5">
-				<div class="col-md-6 text-center ftco-animate">
-					<p><a href="https://drive.google.com/file/d/1ni9aP_FaV2xzN-eGAd2xSJIgsVVBai1C/view?usp=drive_link"
-							class="btn btn-primary py-4 px-5">Resume</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section" id="project-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">Projects</h2>
-					<p>Below are the some sample Projects.</p>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/Bhargav-Chaturvedi/dDrive" class="block-20 zoom-effect"
-							style="background-image: url('images/harddisk.jpg');width:350px;height:300px;;">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/Bhargav-Chaturvedi/dDrive">Decentralized
-									Drive</a></h3>
-							<p><b>Decentralized Drive</b>, allows users to securely store and share file URLs on the
-								blockchain. Users can grant or revoke access to others, ensuring controlled and
-								transparent data sharing.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://github.com/Bhargav-Chaturvedi/dVoting" class="block-20 zoom-effect"
-							style="background-image: url('images/deVote.png');width:350px;height:300px;;">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/Bhargav-Chaturvedi/dVoting">Decentralized
-									Voting</a></h3>
-							This <b>decentralized voting dApp</b> allows users to verify and vote for candidates
-							securely on
-							the blockchain, ensuring transparency and immutability. It leverages smart contracts to
-							manage
-							candidate information, voting data, and election integrity without any centralized
-							authority.
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://decentralized-insurance.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/insurance.png');width:350px;height:300px;;">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://decentralized-insurance.netlify.app/">Decentralized
-									Insurence Dapp</a></h3>
-							<p>This <b>Decentralized Insurance DApp </b> allows policyholders to file claims and receive
-								payouts
-								directly on the blockchain, ensuring transparency and eliminating the need for
-								intermediaries.
-								It leverages smart contracts to automate claim verification and payouts securely and
-								efficiently.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://token-exchange.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/erc20');width:350px;height:300px;;">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://token-exchange.netlify.app/">ERC20 Token Platform</a>
-							</h3>
-							The <b>MCToken</b> is an ERC20 token with pause and minting features, allowing the owner to
-							pause/unpause transfers and mint additional tokens. It also supports burning of tokens,
-							enhancing flexibility and control.
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://shipment-n157dypji-bhargav-chaturvedis-projects.vercel.app/"
-							class="block-20 zoom-effect" style="background-image: url('images/tracking.png');width:350px;height:300px;;">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a
-									href="https://shipment-n157dypji-bhargav-chaturvedis-projects.vercel.app/">Decentralized
-									Shipment Tracker</a></h3>
-							The <b>Decentralized Shipment Tracker</b> is a blockchain-based system that enables secure
-							and
-							transparent tracking of shipments, ensuring real-time updates and immutable records for all
-							stakeholders. By leveraging smart contracts, it automates processes such as shipment
-							creation,
-							status updates, and payment transactions, enhancing efficiency and trust in the logistics
-							industry.
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://github.com/Bhargav-Chaturvedi/NFT_marketplace" class="block-20 zoom-effect"
-							style="background-image: url('images/nft1.png');width:350px;height:300px;;">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/Bhargav-Chaturvedi/NFT_marketplace">NFT
-									Marketplace</a></h3>
-							The <b>NFT Marketplace </b> is a decentralized platform that enables users to create, buy,
-							and
-							sell NFTs securely. By integrating ERC-721 tokens, it ensures transparent transactions and
-							ownership transfers for digital assets.
-						</div>
-					</div>
-				</div>
-			</div>
-			<br>
-			<!-- added justify-content-center to center align the last two projects -->
-			<!-- <div class="row d-flex justify-content-center">  		
-		  </div> -->
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container">
-			<div class="row d-md-flex align-items-center">
-				<!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="10">0</strong>
-							<span>Achievements</span>
-						</div>
-					</div>
-				</div> -->
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="20">0</strong>
-							<span>Projects</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>More projects on<span> Github </span> </h2>
-					<div class="heading">
-						<h4> I love to solve Blockchain problems </h4>
-						<br>
-						<p><a href="https://github.com/Bhargav-Chaturvedi" class="btn btn-primary py-3 px-5">GitHub</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<!-- </div> -->
-		</div>
-	</section>
-
-
-
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>Below are the details to reach out to me!</p>
-				</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<h3 class="mb-4">Address</h3>
-						<p>Faridabad,Haryana, India</p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<h3 class="mb-4">Contact Number</h3>
-						<p><a href="tel://9315167227">+ 0 9315167227</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<h3 class="mb-4">Email Address</h3>
-						<p><a href="mailto:bhargavchaturvedi108@gmail.com">bhargavchaturvedi108@gmail.com</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<h3 class="mb-4">Download Resume</h3>
-						<p><a
-<<<<<<< HEAD
-								href="https://drive.google.com/file/d/1KHDJb9i4qigs8TMa_i75P2rMrfjdBDWG/view?usp=drive_link">Resume</a>
-=======
-								href="https://drive.google.com/file/d/1ni9aP_FaV2xzN-eGAd2xSJIgsVVBai1C/view?usp=drive_link">Resume</a>
->>>>>>> 6e7f56416c523332ebcbe18030eab75006e9a9fb
-						</p>
-					</div>
-				</div>
-
-				<div class="container">
-					<br>
-					<br>
-					<!-- <div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-				</div>
-			</div> -->
-					<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-						<li class="ftco-animate normal-txt">Find me on </li>
-						<li class="ftco-animate"><a
-								href="https://www.linkedin.com/in/bhargav-nandan-chaturvedi-415290224/"><span
-									class="icon-linkedin"></span></a></li>
-
-						<li class="ftco-animate"><a href="https://twitter.com/BhargavNandanC2"><span
-									class="icon-twitter"></span></a></li>
-
-						<li class="ftco-animate"><a href="https://www.upwork.com/freelancers/~01dfa33308f65fe086"><span
-									class="fab fa-upwork"></span></a></li>
-
-						<li class="ftco-animate freelancer-icon">
-							<a href="https://www.freelancer.in/u/your-username">
-								<img src="https://www.freelancer.in/favicon.ico" alt="Freelancer Logo"
-									class="icon-image">
-							</a>
-						</li>
-
-
-
-						<li class="ftco-animate">
-							<a href="https://www.fiverr.com/bhargav_1111?up_rollout=true" target="_blank"
-								rel="noopener noreferrer">
-								<img src="images/fiverr-4.png" alt="Fiverr Logo" class="logo-image">
-							</a>
-						</li>
-
-
-
+					<ul style="margin-top:12px;color:var(--muted);line-height:1.7">
+						<li><strong>Profile:</strong> Blockchain & Cryptocurrency</li>
+						<li><strong>Domain:</strong> Freelance, eCommerce & NFT Marketplaces</li>
+						<li><strong>Language:</strong> English, Hindi</li>
+						<li><strong>Core tools:</strong> Solidity, Hardhat, Truffle, Ethers.js, Web3.js, React,
+							MetaMask, Remix</li>
 					</ul>
-					<br>
+				</div>
+
+				<div class="about-card card">
+					<p class="title-s" style="margin:0 0 12px;font-weight:700">Skills</p>
+
+					<div class="skill">
+						<div class="label">Blockchain Development</div>
+						<div class="muted">95%</div>
+					</div>
+					<div class="progress mb-20"><i style="width:95%"></i></div>
+
+					<div class="skill">
+						<div class="label">Web Development</div>
+						<div class="muted">85%</div>
+					</div>
+					<div class="progress mb-20"><i style="width:85%"></i></div>
+
+					<div class="skill">
+						<div class="label">NFT & Marketplace</div>
+						<div class="muted">80%</div>
+					</div>
+					<div class="progress mb-20"><i style="width:80%"></i></div>
+
+					<div class="skill">
+						<div class="label">Web3 Integration</div>
+						<div class="muted">85%</div>
+					</div>
+					<div class="progress mb-20"><i style="width:85%"></i></div>
+
+					<div class="skill">
+						<div class="label">Smart Contracts</div>
+						<div class="muted">90%</div>
+					</div>
+					<div class="progress"><i style="width:90%"></i></div>
 				</div>
 			</div>
-	</section>
+		</section>
 
+		<!-- RESUME -->
+		<section id="resume-section" class="section">
+			<div class="heading">
+				<h2>Resume</h2>
+			</div>
 
+			<!-- EXPERIENCE -->
+			<section id="experience-section" class="section">
+				<div class="heading">
+					<h2>Experience</h2>
+				</div>
 
-
-	<footer class="ftco-footer ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-
-					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				<div class="card mb-20">
+					<div class="date">Aug 2025 - Oct 2025</div>
+					<h3>Blockchain Developer</h3>
+					<div class="position">StarX AI Technologies</div>
+					<p class="muted">
+						• Resolved payment integration issues on Trust Wallet.<br>
+						• Built a token-selling platform on BSC that supports any BEP token.<br>
+						• Collaborated with frontend teams to ensure smooth dApp UX and Web3 flows.
 					</p>
 				</div>
+			</section>
+
+			<!-- EDUCATION -->
+			<section id="education-section" class="section">
+				<div class="heading">
+					<h2>Education</h2>
+				</div>
+
+				<div class="card">
+					<div class="date">2021 - 2025</div>
+					<h3>Bachelor of Engineering</h3>
+					<div class="position">Lingayas Vidyapeeth University</div>
+					<p class="muted">CGPA: 7.84 / 10</p>
+				</div>
+			</section>
+
+
+		</section>
+
+		<!-- PROJECTS -->
+		<section id="project-section" class="section">
+			<div class="heading">
+				<h2>Projects</h2>
 			</div>
-		</div>
-	</footer>
 
+			<div class="projects-grid">
+				<article class="project card">
+					<div class="thumb" style="background-image:url('images/insur.png')"></div>
+					<div class="meta">
+						<h3><a href="https://decentralized-insurance.netlify.app/" target="_blank">Decentralized
+								Insurance DApp</a></h3>
+						<p class="muted">Smart contracts automate policy issuance and claim payouts for transparent,
+							trustless insurance flows.</p>
+					</div>
+				</article>
 
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
+				<article class="project card">
+					<div class="thumb" style="background-image:url('images/shipment.png')"></div>
+					<div class="meta">
+						<h3><a href="https://shipment-sepolia.netlify.app/" target="_blank">Decentralized Shipment
+								Tracker</a></h3>
+						<p class="muted">Immutable shipment records, automated status updates, and on-chain verification
+							to improve logistics transparency.</p>
+					</div>
+				</article>
 
+				<article class="project card">
+					<div class="thumb" style="background-image:url('images/nft.png')"></div>
+					<div class="meta">
+						<h3><a href="https://nft-marketplace-sepolia.netlify.app/my-nfts" target="_blank">NFT
+								Marketplace</a></h3>
+						<p class="muted">A decentralized marketplace built with ERC-721 transfers, enabling secure
+							minting, buying and selling.</p>
+					</div>
+				</article>
+			</div>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
+		</section>
 
-	<script src="js/main.js"></script>
+		<!-- CONTACT -->
+		<section id="contact-section" class="section">
+			<div class="heading">
+				<h2>Contact</h2>
+			</div>
+			<div class="contact-grid">
+				<div class="contact-card card">
+					<div><i class="fas fa-map-marker-alt"></i></div>
+					<h4 style="margin:8px 0 4px">Address</h4>
+					<div class="muted">Faridabad, Haryana, India</div>
+				</div>
 
+				<a href="tel:+9315167227" class="contact-card card" style="text-decoration:none;color:inherit">
+					<div><i class="fas fa-phone"></i></div>
+					<h4 style="margin:8px 0 4px">Phone</h4>
+					<div class="muted">+91 9315167227</div>
+				</a>
+
+				<a href="mailto:bhargavchaturvedi108@gmail.com" class="contact-card card"
+					style="text-decoration:none;color:inherit">
+					<div><i class="fas fa-paper-plane"></i></div>
+					<h4 style="margin:8px 0 4px">Email</h4>
+					<div class="muted">bhargavchaturvedi108@gmail.com</div>
+				</a>
+
+				<a href="https://drive.google.com/file/d/1ArVKJWgL4wgSQFcqFCvahhKpmmuNDK2e/view?usp=sharing"
+					class="contact-card card" style="text-decoration:none;color:inherit">
+					<div><i class="fas fa-file-download"></i></div>
+					<h4 style="margin:8px 0 4px">Resume</h4>
+					<div class="muted">Download CV</div>
+				</a>
+			</div>
+
+			<div style="text-align:center;margin-top:22px;color:var(--muted)">
+				<div>Find me on</div>
+				<div style="display:flex;gap:14px;justify-content:center;margin-top:8px">
+					<a href="https://www.linkedin.com/in/bhargav-nandan-chaturvedi-415290224/" target="_blank"
+						class="muted"><i class="fab fa-linkedin fa-lg"></i></a>
+					<a href="https://twitter.com/BhargavNandanC2" target="_blank" class="muted"><i
+							class="fab fa-twitter fa-lg"></i></a>
+					<a href="https://www.upwork.com/freelancers/~01dfa33308f65fe086" target="_blank" class="muted"><i
+							class="fab fa-upwork fa-lg"></i></a>
+				</div>
+			</div>
+
+		</section>
+
+		<footer>
+			<div>&copy; <span id="year"></span> Bhargav N. Chaturvedi — All rights reserved.</div>
+		</footer>
+
+	</div>
+
+	<!-- Minimal JS: typing animation + smooth scroll -->
+	<script>
+		// set year
+		document.getElementById('year').textContent = new Date().getFullYear();
+
+		// typing (simple, accessible)
+		(function () {
+			const el = document.getElementById('typing');
+			const texts = ['Smart Contract Developer', 'DApp Developer', 'Web3 Integrations', 'Solidity Expert'];
+			let i = 0, j = 0, forward = true;
+			function step() {
+				const txt = texts[i];
+				el.textContent = txt.slice(0, j);
+				if (forward) {
+					if (j < txt.length) j++;
+					else forward = false;
+				} else {
+					if (j > 0) j--;
+					else { forward = true; i = (i + 1) % texts.length; }
+				}
+				setTimeout(step, forward ? 80 : 40);
+			}
+			step();
+		})();
+
+		// smooth scroll for internal links
+		document.querySelectorAll('a[href^="#"]').forEach(a => {
+			a.addEventListener('click', function (e) {
+				const href = this.getAttribute('href');
+				if (href.length > 1) {
+					e.preventDefault();
+					const target = document.querySelector(href);
+					if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>
